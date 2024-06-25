@@ -39,12 +39,18 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "posts.apps.PostsConfig",
     "rest_framework",
+    "rest_framework.authtoken",
+    "rest_auth",
 ]
 
 REST_FRAMEWORK={
     'DEFAULT_PERMISSION_CLASSES':[
         'rest_framework.permissions.IsAuthenticated',
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.SessionAuthentication', #for us to keep using the browsable API
+        'rest_framework.authentication.TokenAuthentication', #include the token in header of the api call to authenticate
+    ]
 }
 
 MIDDLEWARE = [

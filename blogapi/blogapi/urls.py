@@ -19,5 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/v1/", include("posts.urls"))
+    path("api/v1/", include("posts.urls")),
+    path("api/v1/rest-auth/", include("rest_auth.urls")), # If Error:ImportError: cannot import name 'url' from 'django.conf.urls'
+                                                          # to solve this pip3 install django-rest-auth-forked
 ]
