@@ -12,3 +12,7 @@ class IsAuthorOrReadOnly(BasePermission):
         if request.method in SAFE_METHODS: # If the request method is safe, then return True
             return True
         return obj.author==request.user # Only the author can make a change to the post
+
+class IsCurrentUserOrAdmin(BasePermission):
+    def has_object_permission(self, request, view, obj):
+        return obj==request.user or request.user.is_staff
