@@ -17,6 +17,6 @@ urlpatterns = [
     path("users/<int:pk>/", views.UserDetail.as_view(), name="user-detail"),
     path("schema/", SchemaView),
     path("docs/", DocsView),
-    path("swagger-docs/", SwaggerView),#
+   # path("swagger-docs/", SwaggerView),
 ]
 urlpatterns.extend(router.urls)
