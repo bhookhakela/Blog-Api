@@ -58,7 +58,9 @@ REST_FRAMEWORK={
     'DEFAULT_AUTHENTICATION_CLASSES':[
         'rest_framework.authentication.SessionAuthentication', #for us to keep using the browsable API
         'rest_framework.authentication.TokenAuthentication', #include the token in header of the api call to authenticate
-    ]
+    ],
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+
 }
 
 MIDDLEWARE = [
